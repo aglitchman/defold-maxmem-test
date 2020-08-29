@@ -1,0 +1,19 @@
+function init(self)
+	msg.post("#", "make_buf")
+end
+
+function final(self)
+end
+
+function update(self, dt)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("make_buf") then
+		self.buf = buffer.create(300000000, { { name=hash("data"), type=buffer.VALUE_TYPE_UINT8, count=1 } })
+		label.set_text("#status", "Test is PASSED.")
+	end
+end
+
+function on_input(self, action_id, action)
+end
